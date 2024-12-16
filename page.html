@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLY DOWN - Game</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: monospace;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #06b6d4;
+            color: #000;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, rgba(147, 51, 234, 0.1) 0%, rgba(10, 10, 10, 0.9) 100%);
+            border-bottom: 2px solid #06b6d4;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #06b6d4;
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #94a3b8;
+        }
+
+        /* Features section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #06b6d4;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(147, 51, 234, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #9333ea;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #06b6d4;
+        }
+
+        .feature-card h3 {
+            color: #06b6d4;
+            margin-bottom: 15px;
+        }
+
+        /* Screenshots section */
+        .screenshots {
+            padding: 80px 0;
+            background: rgba(147, 51, 234, 0.05);
+        }
+
+        .screenshots h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #06b6d4;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot {
+            position: relative;
+            border: 2px solid #9333ea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .screenshot:hover {
+            border-color: #06b6d4;
+            transform: scale(1.02);
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* CTA section */
+        .cta {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #06b6d4;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-secondary {
+            background: #9333ea;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(147, 51, 234, 0.2);
+        }
+
+        .footer p {
+            color: #94a3b8;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+
+        /* Scroll indicator animation */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #06b6d4;
+            font-size: 24px;
+            animation: bounce 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>ONLY DOWN</h1>
+            <p>Your journey to rock bottom starts here</p>
+            <button class="btn">Download Demo</button>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>GAME FEATURES</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Unique Gameplay</h3>
+                    <p>Experience the thrill of making the worst possible decisions in life. Every choice matters - especially the bad ones.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multiple Quests</h3>
+                    <p>From career sabotage to social disasters, explore various paths to your personal rock bottom.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Progression System</h3>
+                    <p>Watch your life spiral downward with our innovative anti-achievement system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <div class="container">
+            <h2>SCREENSHOTS</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot">
+                    <img src="/images/demo.webp" alt="Game Screenshot 1">
+                </div>
+                <div class="screenshot">
+                    <img src="/images/menu.webp" alt="Game Screenshot 2">
+                </div>
+                <div class="screenshot">
+                    <img src="/images/charecter_selection.webp" alt="Game Screenshot 3">
+                </div>
+                <div class="screenshot">
+                    <img src="/images/quest1.webp" alt="Game Screenshot 4">
+                </div>
+                <div class="screenshot">
+                    <img src="/images/quest2.webp" alt="Game Screenshot 5">
+                </div>
+                <div class="screenshot">
+                    <img src="/images/quest3.webp" alt="Game Screenshot 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>READY TO GO DOWN?</h2>
+            <div class="btn-group">
+                <button class="btn btn-secondary">Share</button>
+                <button class="btn">Download Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 ONLY DOWN. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
