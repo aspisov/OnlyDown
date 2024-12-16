@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONLY DOWN - Game</title>
     <style>
+        /* All previous styles remain the same until .screenshot img */
         /* Reset and base styles */
         * {
             margin: 0;
@@ -132,6 +133,7 @@
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
+            aspect-ratio: 16 / 9;
         }
 
         .screenshot:hover {
@@ -139,9 +141,16 @@
             transform: scale(1.02);
         }
 
+        .screenshot picture {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
         .screenshot img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -246,22 +255,40 @@
             <h2>SCREENSHOTS</h2>
             <div class="screenshots-grid">
                 <div class="screenshot">
-                    <img src="./images/demo.webp" alt="Game Screenshot 1">
+                    <picture>
+                        <source srcset="./images/demo.webp" type="image/webp">
+                        <img src="./images/demo.jpg" alt="Game Screenshot 1" loading="lazy">
+                    </picture>
                 </div>
                 <div class="screenshot">
-                    <img src="./images/menu.webp" alt="Game Screenshot 2">
+                    <picture>
+                        <source srcset="./images/menu.webp" type="image/webp">
+                        <img src="./images/menu.jpg" alt="Game Screenshot 2" loading="lazy">
+                    </picture>
                 </div>
                 <div class="screenshot">
-                    <img src="./images/charecter_selection.webp" alt="Game Screenshot 3">
+                    <picture>
+                        <source srcset="./images/charecter_selection.webp" type="image/webp">
+                        <img src="./images/charecter_selection.jpg" alt="Game Screenshot 3" loading="lazy">
+                    </picture>
                 </div>
                 <div class="screenshot">
-                    <img src="./images/quest1.webp" alt="Game Screenshot 4">
+                    <picture>
+                        <source srcset="./images/quest1.webp" type="image/webp">
+                        <img src="./images/quest1.jpg" alt="Game Screenshot 4" loading="lazy">
+                    </picture>
                 </div>
                 <div class="screenshot">
-                    <img src="./images/quest2.webp" alt="Game Screenshot 5">
+                    <picture>
+                        <source srcset="./images/quest2.webp" type="image/webp">
+                        <img src="./images/quest2.jpg" alt="Game Screenshot 5" loading="lazy">
+                    </picture>
                 </div>
                 <div class="screenshot">
-                    <img src="./images/quest3.webp" alt="Game Screenshot 6">
+                    <picture>
+                        <source srcset="./images/quest3.webp" type="image/webp">
+                        <img src="./images/quest3.jpg" alt="Game Screenshot 6" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
